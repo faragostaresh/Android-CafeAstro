@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:gravity="center|top"
+    android:orientation="vertical" >
+    
+    <TextView
+        android:id="@+id/textViewhead"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        android:background="@drawable/header"
+        android:gravity="center"
+        android:padding="1dp"
+        android:textIsSelectable="true" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none" >
+
+        <LinearLayout
+            android:id="@+id/layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="1dp" >
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="Tahoma"
+                android:padding="5dp"
+                android:lineSpacingExtra="16sp"
+                android:layoutDirection="rtl"
+                android:gravity="right"
+                android:textSize = "18sp"
+                android:text="@string/about_us_text_1" />
+
+            <ImageView
+                android:id="@+id/imageView1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/faragostaresh"
+                android:gravity="center"
+                android:padding="10dp"
+                android:src="@drawable/cafeastro" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:fontFamily="Tahoma"
+                android:lineSpacingExtra="16sp"
+                android:layoutDirection="rtl"
+                android:gravity="center"
+                android:textSize = "18sp"
+                android:text="@string/about_us_text_2" />
+
+            <ImageView
+                android:id="@+id/faragostaresh"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/faragostaresh"
+                android:gravity="center"
+                android:padding="10dp"
+                android:src="@drawable/faragostaresh" />
+            
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:fontFamily="Tahoma"
+                android:lineSpacingExtra="16sp"
+                android:layoutDirection="rtl"
+                android:gravity="center"
+                android:textSize = "18sp"
+                android:text="@string/faragostaresh_website" />
+            
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:fontFamily="Tahoma"
+                android:lineSpacingExtra="16sp"
+                android:layoutDirection="rtl"
+                android:gravity="center"
+                android:textSize = "18sp"
+                android:text="@string/faragostaresh_email" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

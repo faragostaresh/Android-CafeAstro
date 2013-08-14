@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:gravity="center|top"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/textViewhead"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        android:background="@drawable/header"
+        android:gravity="center"
+        android:padding="1dp"
+        android:textIsSelectable="true" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none" >
+
+        <LinearLayout
+            android:id="@+id/layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="1dp" >
+
+            <ImageView
+                android:id="@+id/showimage"
+                android:layout_width="320dp"
+                android:layout_height="280dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="10dp"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="10dp"
+                android:background="#ffffff"
+                android:contentDescription="@string/icon"
+                android:gravity="center"
+                android:padding="4dp"
+                android:src="@drawable/loader" />
+
+            <ir.adad.AdView
+                android:id="@+id/ad"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                token="41b9fe2263454532b75469ad0f25cff6" />
+
+            <TextView
+                android:id="@+id/showtitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="Tahoma"
+                android:gravity="right"
+                android:layoutDirection="rtl"
+                android:lineSpacingExtra="20sp"
+                android:padding="1dp"
+                android:textIsSelectable="true"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/showbody"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="Tahoma"
+                android:gravity="right"
+                android:layoutDirection="rtl"
+                android:lineSpacingExtra="12sp"
+                android:padding="5dp"
+                android:textIsSelectable="true"
+                android:textSize="18sp" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

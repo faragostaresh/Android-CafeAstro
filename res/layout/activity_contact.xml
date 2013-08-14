@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:gravity="center|top"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/textViewhead"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        android:background="@drawable/header"
+        android:gravity="center"
+        android:padding="1dp"
+        android:textIsSelectable="true" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="1dp" >
+
+        <TextView
+            android:id="@+id/textViewName"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="Tahoma"
+            android:gravity="right"
+            android:text="@string/name"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <EditText
+            android:id="@+id/editTextName"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text" >
+        </EditText>
+
+        <TextView
+            android:id="@+id/textViewEmail"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="Tahoma"
+            android:gravity="right"
+            android:text="@string/email"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <EditText
+            android:id="@+id/editTextEmail"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress" >
+        </EditText>
+
+        <TextView
+            android:id="@+id/textViewSubject"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="Tahoma"
+            android:gravity="right"
+            android:text="@string/subject"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <EditText
+            android:id="@+id/editTextSubject"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text" >
+        </EditText>
+
+        <TextView
+            android:id="@+id/textViewMessage"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="Tahoma"
+            android:gravity="right"
+            android:text="@string/message"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <EditText
+            android:id="@+id/editTextMessage"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="top"
+            android:inputType="textMultiLine"
+            android:lines="5" />
+
+        <Button
+            android:id="@+id/sendemail_intent"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="Tahoma"
+            android:text="@string/btnsend" />
+    </LinearLayout>
+
+</LinearLayout>

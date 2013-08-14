@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">کافه آسترو</string>
+    <string name="app_desc">آخرین مطالب آموزشی درباره ستاره شناسی و اخترشناسی</string>
+    <string name="action_settings">تنظیمات</string>
+    <string name="faragostaresh_email">info@faragostaresh.com</string>
+    <string name="faragostaresh_website">www.faragostaresh.com</string>
+    <string name="faragostaresh">فراگسترش</string>
+    <string name="getid">شماره</string>
+    
+    <string name="title">عنوان</string>
+    <string name="thumbnail">تصویر</string>
+    <string name="icon">آیکن</string>
+    <string name="test">تست</string>
+    <string name="listbg">پس زمینه لیست</string>
+    
+    <string name="about_us_text_1">از دیر باز آسمان مکانی پر رمز و راز برای بشر بوده است. دریانوردان با استفاده از ماه و ستارگان موقعیت کشتی خود را پیدا می کردند و کشاورزان زمان کاشت و برداشت محصول را با حرکت ستارگان و ماه تنظیم می کردند. اخترشناسان شب ها به رصد آسمان پر ستاره می پرداختند و پدیده هایی مانند خورشید گرفتگی، ماه گرفتگی و مقارنه را پیش بینی می کردند. اخترشناسانی مانند ابوریحان بیرونی، عبد الرحمن صوفی، خواجه نصیر طوسی، ابن هیثم و خوارزمی از بزرگترین اخترشناسان ایرانی بودند.امروزه با تلاش های این اخترشناسان می دانیم که زمین و هفت سیاره دیگر به همراه اقمار و سیارک ها به دور خورشید می گردند. این مجموعه که منظومه شمسی نامیده می شود به همراه میلیارد ها ستاره دیگر در کهکشان راه شیری قرار دارد. کهکشان ها از تعداد بسیار زیادی ستاره و منظومه سیاره ای یا ستاره ای تشکیل شده اند. اگر کمی زاویه دید مان را باز تر کنیم و به کیهان بنگریم مجموعه ای از کهکشان ها را می بینیم. جهان اطراف ما بسیار پیچیده تر از آن است که ما می پنداریم و سوالات بسیاری درباره آن وجود دارد. علم نجوم سعی دارد به سوالات ما در باره جهان پاسخ گوید و کافه آسترو (cafeastro) مکانی است برای شما تا پاسخ پرسش های خود را بیابید.راز های آسمان را در کافه آسترو بشناسید.</string>
+    <string name="about_us_text_2">پیاده سازی و توسعه وب سایت و نرم افزار تحت وب کافه آسترو توسط فراگسترش به انجام رسیده است</string>
+    
+    <string name="btnsend">ارسال</string>
+    <string name="subject">موضوع</string>
+    <string name="name">نام</string>
+    <string name="email">ایمیل</string>
+    <string name="message">پیام</string>
+    
+    <string name="d_internet">خطا اتصال اینترنت</string>
+    <string name="d_internet_contact">برای استفاده از بخش تماس با ما، ابتدا باید به اینترنت وصل شوید.</string>
+    <string name="d_internet_image">برای لود شدن تصاویر از وب سایت، ابتدا باید به اینترنت وصل شوید.</string>
+    <string name="d_internet_access">نرم افزار به اینترنت دسترسی ندارد. در نتیجه امکان به روز رسانی داده ها وجود نداشته و نسخه آفلاین به شما نمایش داده می شود</string>
+    <string name="d_internet_access_count">برای اولین استفاده باید به اینترنت وصل شوید تا اطلاعات از طریق وب سایت به روز شود</string>
+    <string name="d_processing">در حال دریافت اطلاعات</string>
+    <string name="d_wait">این روند اندکی زمان بر است، لطفا صبر داشته باشید.</string>
+    <string name="d_ok">تایید</string>
+    
+    <string name="update_title">نسخه جدید نرم افزار منتشر شد</string>
+    <string name="update_now">به روز کن</string>
+    <string name="update_remind_later">بعدا اطلاع بده</string>
+    <string name="update_ignore">نادیده بگیر</string>
+    
+</resources>
