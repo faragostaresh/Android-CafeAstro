@@ -4,97 +4,135 @@
     android:layout_height="match_parent"
     android:background="@drawable/background"
     android:gravity="center|top"
-    android:orientation="vertical" >
+    android:orientation="vertical"
+    android:tileMode="repeat" >
 
-    <TextView
-        android:id="@+id/textViewhead"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_gravity="center"
-        android:layout_marginStart="0dp"
-        android:layout_marginTop="0dp"
-        android:background="@drawable/header"
-        android:gravity="center"
-        android:padding="1dp"
-        android:textIsSelectable="true" />
+    <RelativeLayout
+        android:id="@+id/rHeader"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="1dp" >
+        <include
+            android:id="@+id/header"
+            layout="@layout/activity_header" />
+    </RelativeLayout>
 
-        <TextView
-            android:id="@+id/textViewName"
-            android:layout_width="fill_parent"
+    <RelativeLayout
+        android:id="@+id/rFooter"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+
+        <ScrollView
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="Tahoma"
-            android:gravity="right"
-            android:text="@string/name"
-            android:textAppearance="?android:attr/textAppearanceLarge" />
+            android:layout_marginBottom="60dp" >
 
-        <EditText
-            android:id="@+id/editTextName"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:inputType="text" >
-        </EditText>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="1dp" >
 
-        <TextView
-            android:id="@+id/textViewEmail"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="Tahoma"
-            android:gravity="right"
-            android:text="@string/email"
-            android:textAppearance="?android:attr/textAppearanceLarge" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginLeft="15dp"
+                    android:orientation="vertical" >
 
-        <EditText
-            android:id="@+id/editTextEmail"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textEmailAddress" >
-        </EditText>
+                    <TextView
+                        android:id="@+id/textViewName"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="Tahoma"
+                        android:gravity="right"
+                        android:text="@string/name"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textColor="#ffffff" />
 
-        <TextView
-            android:id="@+id/textViewSubject"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="Tahoma"
-            android:gravity="right"
-            android:text="@string/subject"
-            android:textAppearance="?android:attr/textAppearanceLarge" />
+                    <EditText
+                        android:id="@+id/editTextName"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="text"
+                        android:padding="5dp" >
+                    </EditText>
 
-        <EditText
-            android:id="@+id/editTextSubject"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:inputType="text" >
-        </EditText>
+                    <TextView
+                        android:id="@+id/textViewEmail"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="Tahoma"
+                        android:gravity="right"
+                        android:text="@string/email"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textColor="#ffffff" />
 
-        <TextView
-            android:id="@+id/textViewMessage"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="Tahoma"
-            android:gravity="right"
-            android:text="@string/message"
-            android:textAppearance="?android:attr/textAppearanceLarge" />
+                    <EditText
+                        android:id="@+id/editTextEmail"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textEmailAddress" >
+                    </EditText>
 
-        <EditText
-            android:id="@+id/editTextMessage"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:gravity="top"
-            android:inputType="textMultiLine"
-            android:lines="5" />
+                    <TextView
+                        android:id="@+id/textViewSubject"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="Tahoma"
+                        android:gravity="right"
+                        android:text="@string/subject"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textColor="#ffffff" />
 
-        <Button
-            android:id="@+id/sendemail_intent"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="Tahoma"
-            android:text="@string/btnsend" />
-    </LinearLayout>
+                    <EditText
+                        android:id="@+id/editTextSubject"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="text" >
+                    </EditText>
+
+                    <TextView
+                        android:id="@+id/textViewMessage"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="Tahoma"
+                        android:gravity="right"
+                        android:text="@string/message"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textColor="#ffffff" />
+
+                    <EditText
+                        android:id="@+id/editTextMessage"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="top"
+                        android:inputType="textMultiLine"
+                        android:lines="5" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical" >
+
+                    <Button
+                        android:id="@+id/sendemail_intent"
+                        android:layout_width="180dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="Tahoma"
+                        android:gravity="center"
+                        android:text="@string/btnsend"
+                        android:textColor="#222222" />
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+
+        <include
+            android:id="@+id/footer"
+            layout="@layout/activity_footer" />
+    </RelativeLayout>
 
 </LinearLayout>

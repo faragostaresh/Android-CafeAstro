@@ -3,11 +3,10 @@
 
     <string name="app_name">Cafe Astro</string>
     <string name="app_desc">Learn and News About Astronomy</string>
-    <string name="action_settings">Setting</string>
-    <string name="faragostaresh_email">info@faragostaresh.com</string>
-    <string name="faragostaresh_website">www.faragostaresh.com</string>
+    <string name="action_settings">Settings</string>
+    <string name="fixaddress">info@faragostaresh.com</string>
     <string name="faragostaresh">Faragostaresh</string>
-    <string name="getid">شماره</string>
+    <string name="image">image</string>
     
     <string name="title">عنوان</string>
     <string name="thumbnail">تصویر</string>
@@ -15,8 +14,12 @@
     <string name="test">تست</string>
     <string name="listbg">پس زمینه لیست</string>
     
-    <string name="about_us_text_1">از دیر باز آسمان مکانی پر رمز و راز برای بشر بوده است. دریانوردان با استفاده از ماه و ستارگان موقعیت کشتی خود را پیدا می کردند و کشاورزان زمان کاشت و برداشت محصول را با حرکت ستارگان و ماه تنظیم می کردند. اخترشناسان شب ها به رصد آسمان پر ستاره می پرداختند و پدیده هایی مانند خورشید گرفتگی، ماه گرفتگی و مقارنه را پیش بینی می کردند. اخترشناسانی مانند ابوریحان بیرونی، عبد الرحمن صوفی، خواجه نصیر طوسی، ابن هیثم و خوارزمی از بزرگترین اخترشناسان ایرانی بودند.امروزه با تلاش های این اخترشناسان می دانیم که زمین و هفت سیاره دیگر به همراه اقمار و سیارک ها به دور خورشید می گردند. این مجموعه که منظومه شمسی نامیده می شود به همراه میلیارد ها ستاره دیگر در کهکشان راه شیری قرار دارد. کهکشان ها از تعداد بسیار زیادی ستاره و منظومه سیاره ای یا ستاره ای تشکیل شده اند. اگر کمی زاویه دید مان را باز تر کنیم و به کیهان بنگریم مجموعه ای از کهکشان ها را می بینیم. جهان اطراف ما بسیار پیچیده تر از آن است که ما می پنداریم و سوالات بسیاری درباره آن وجود دارد. علم نجوم سعی دارد به سوالات ما در باره جهان پاسخ گوید و کافه آسترو (cafeastro) مکانی است برای شما تا پاسخ پرسش های خود را بیابید.راز های آسمان را در کافه آسترو بشناسید.</string>
-    <string name="about_us_text_2">پیاده سازی و توسعه وب سایت و نرم افزار تحت وب کافه آسترو توسط فراگسترش به انجام رسیده است</string>
+    <string name="about_us_text_1">اگر در یک شب صاف با یک تلسکوپ به منطقه ای کویری سفر کنید، می توانید سیاره ها، کهکشان ها، سحابی ها، خوشه های ستاره ای و بسیاری پدیده های دیگر را در آسمان ببینید. حتی امکان دارد در طول شب شهاب های زیادی نیز از بالای سر شما عبور کنند. </string>
+    <string name="about_us_text_2">نجوم علمی است که به بررسی ستاره ها، کهکشان ها، سیاره ها و غیره می پردازد و بطور کلی درمورد تمام عالم بحث می کند. احتمالا شما برای آشنایی با این پدیده ها به سراغ کتاب های نجومی می روید.</string>
+    <string name="about_us_text_3">اما شما با نرم افزار کافه آسترو می توانید به راحتی با پدیده ها و اخبار نجومی آشنا شوید. این نرم افزار که هر روز با مطالب جدید آپدیت می شود، قصد دارد شما را با علم نجوم آشنا کند. </string>
+    <string name="about_us_text_4">شما می توانید از بخش تماس با ما، نظرات خود را با ما در میان بگذارید.</string>
+    <string name="about_us_text_5">نویسندگان: مائده فرهوش و نسیم فرزانگان</string>
+    <string name="about_us_text_6">پیاده سازی و توسعه نرم افزار اندروید کافه آسترو توسط فراگسترش به انجام رسیده است</string>
     
     <string name="btnsend">ارسال</string>
     <string name="subject">موضوع</string>
@@ -31,7 +34,8 @@
     <string name="d_internet_access_count">برای اولین استفاده باید به اینترنت وصل شوید تا اطلاعات از طریق وب سایت به روز شود</string>
     <string name="d_processing">در حال دریافت اطلاعات</string>
     <string name="d_wait">این روند اندکی زمان بر است، لطفا صبر داشته باشید.</string>
-    <string name="d_ok">تایید</string>
+    <string name="d_error">خطا</string>
+    <string name="d_content">تمام فیلد ها را باید تکمیل کنید</string>
     
     <string name="update_title">نسخه جدید نرم افزار منتشر شد</string>
     <string name="update_now">به روز کن</string>

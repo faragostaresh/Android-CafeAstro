@@ -65,20 +65,41 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 				KEY_TITLE, KEY_BODY, KEY_IMAGE, KEY_DATE }, KEY_ID + "=?",
 				new String[] { String.valueOf(item.getId()) }, null, null,
 				null, null);
+
+		ContentValues values = new ContentValues();
+		// Set Items
+		values.put(KEY_ID, item.getId());
+		values.put(KEY_CID, item.getCid());
+		values.put(KEY_TITLE, item.getTitle());
+		values.put(KEY_BODY, item.getBody());
+		values.put(KEY_IMAGE, item.getImage());
+		values.put(KEY_DATE, item.getDate());
+
 		if (cursor != null) {
-			ContentValues values = new ContentValues();
-			// Set Items
-			values.put(KEY_ID, item.getId());
-			values.put(KEY_CID, item.getCid());
-			values.put(KEY_TITLE, item.getTitle());
-			values.put(KEY_BODY, item.getBody());
-			values.put(KEY_IMAGE, item.getImage());
-			values.put(KEY_DATE, item.getDate());
 			// Inserting Row
 			db.insert(TABLE_STORY, null, values);
+		} else {
+			db.update(TABLE_STORY, values, KEY_ID + " = ?",
+					new String[] { String.valueOf(item.getId()) });
 		}
 		// Closing database connection
 		db.close();
+	}
+
+	// Updating single contact
+	public int updateItem(Story item) {
+		SQLiteDatabase db = this.getWritableDatabase();
+		ContentValues values = new ContentValues();
+		// Set Items
+		values.put(KEY_ID, item.getId());
+		values.put(KEY_CID, item.getCid());
+		values.put(KEY_TITLE, item.getTitle());
+		values.put(KEY_BODY, item.getBody());
+		values.put(KEY_IMAGE, item.getImage());
+		values.put(KEY_DATE, item.getDate());
+		// updating row
+		return db.update(TABLE_STORY, values, KEY_ID + " = ?",
+				new String[] { String.valueOf(item.getId()) });
 	}
 
 	// Getting single item
@@ -102,48 +123,82 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 	public List<Story> getAllItemCid(int cid) {
 		List<Story> itemList = new ArrayList<Story>();
 		// Select All Query
-		String selectQuery = "SELECT * FROM " + TABLE_STORY + " WHERE cid = "
-				+ cid + " ORDER BY " + KEY_ID + " DESC";
+		if (cid > 0) {
+			String selectQuery = "SELECT * FROM " + TABLE_STORY
+					+ " WHERE cid = " + cid + " ORDER BY " + KEY_ID + " DESC";
 
-		SQLiteDatabase db = this.getWritableDatabase();
-		Cursor cursor = db.rawQuery(selectQuery, null);
+			SQLiteDatabase db = this.getWritableDatabase();
+			Cursor cursor = db.rawQuery(selectQuery, null);
 
-		// looping through all rows and adding to list
-		if (cursor.moveToFirst()) {
-			do {
-				Story story = new Story();
-				story.setId(Integer.parseInt(cursor.getString(0)));
-				story.setCid(Integer.parseInt(cursor.getString(1)));
-				story.setTitle(cursor.getString(2));
-				story.setBody(cursor.getString(3));
-				story.setImage(cursor.getString(4));
-				story.setDate(cursor.getString(5));
-				// Adding contact to list
-				itemList.add(story);
-			} while (cursor.moveToNext());
+			// looping through all rows and adding to list
+			if (cursor.moveToFirst()) {
+				do {
+					Story story = new Story();
+					story.setId(Integer.parseInt(cursor.getString(0)));
+					story.setCid(Integer.parseInt(cursor.getString(1)));
+					story.setTitle(cursor.getString(2));
+					story.setBody(cursor.getString(3));
+					story.setImage(cursor.getString(4));
+					story.setDate(cursor.getString(5));
+					// Adding contact to list
+					itemList.add(story);
+				} while (cursor.moveToNext());
+			}
+			db.close();
+			// return contact list
+			return itemList;
+
+		} else {
+			String selectQuery = "SELECT * FROM " + TABLE_STORY + " ORDER BY "
+					+ KEY_ID + " DESC";
+
+			SQLiteDatabase db = this.getWritableDatabase();
+			Cursor cursor = db.rawQuery(selectQuery, null);
+
+			// looping through all rows and adding to list
+			if (cursor.moveToFirst()) {
+				do {
+					Story story = new Story();
+					story.setId(Integer.parseInt(cursor.getString(0)));
+					story.setCid(Integer.parseInt(cursor.getString(1)));
+					story.setTitle(cursor.getString(2));
+					story.setBody(cursor.getString(3));
+					story.setImage(cursor.getString(4));
+					story.setDate(cursor.getString(5));
+					// Adding contact to list
+					itemList.add(story);
+				} while (cursor.moveToNext());
+			}
+			db.close();
+			// return contact list
+			return itemList;
+
 		}
 
-		// return contact list
-		return itemList;
 	}
 
-	public int getStoryCount() {
+	public int getStoryCount(int cid) {
 		SQLiteDatabase db = this.getReadableDatabase();
-		Cursor dataCount = db.rawQuery("select count(*) from " + TABLE_STORY,
-				null);
+		Cursor dataCount = db.rawQuery("select count(*) from " + TABLE_STORY
+				+ " WHERE cid = " + cid, null);
 		dataCount.moveToFirst();
 		int jcount = dataCount.getInt(0);
 		dataCount.close();
 		return jcount;
 	}
 
-	public int getStoryLastId() {
-		SQLiteDatabase db = this.getReadableDatabase();
-		Cursor lastId = db.rawQuery("SELECT count(" + KEY_ID + ") FROM "
-				+ TABLE_STORY + " ORDER BY " + KEY_ID + " DESC LIMIT 1", null);
-		lastId.moveToFirst();
-		int jcount = lastId.getInt(0);
-		lastId.close();
-		return jcount;
+	public int getStoryLastId(int cid) {
+
+		String selectQuery = "SELECT " + KEY_ID + " FROM " + TABLE_STORY
+				+ " WHERE cid = " + cid + " ORDER BY " + KEY_ID + " DESC";
+
+		SQLiteDatabase db = this.getWritableDatabase();
+		Cursor lastId = db.rawQuery(selectQuery, null);
+
+		if (lastId.moveToFirst()) {
+			return Integer.parseInt(lastId.getString(0));
+		} else {
+			return 1;
+		}
 	}
 }

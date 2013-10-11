@@ -16,6 +16,7 @@ import com.cafeastro.extra.WVersionManager;
 import com.google.analytics.tracking.android.EasyTracker;
 
 public class MainActivity<Index> extends Activity {
+
 	public ListView lv;
 	public MainListAdapter adapter;
 
@@ -24,16 +25,13 @@ public class MainActivity<Index> extends Activity {
 	public static final String URL_VERSION = "http://service.faragostaresh.com/android/cafeastro/version/index.php";
 
 	@Override
-	public void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
+	public void onCreate(Bundle bundle) {
+		super.onCreate(bundle);
 		setContentView(R.layout.activity_main);
 
 		// Check for new version
 		checkVersion();
-		
-		// Adad ads
-		//Adad.setTestMode(true);
-		
+
 		// Set list array
 		ArrayList<HashMap<String, String>> listview_main = new ArrayList<HashMap<String, String>>();
 
@@ -41,11 +39,6 @@ public class MainActivity<Index> extends Activity {
 		map1.put(KEY_TITLE, "اخبار");
 		map1.put(KEY_THUMBNAIL, "icon1");
 		listview_main.add(map1);
-
-		HashMap<String, String> map2 = new HashMap<String, String>();
-		map2.put(KEY_TITLE, "دانشمندان");
-		map2.put(KEY_THUMBNAIL, "icon2");
-		listview_main.add(map2);
 
 		HashMap<String, String> map3 = new HashMap<String, String>();
 		map3.put(KEY_TITLE, "دانستنی ها");
@@ -88,32 +81,25 @@ public class MainActivity<Index> extends Activity {
 					break;
 
 				case 1:
-					Intent cid2 = new Intent(getApplicationContext(),
-							TopicActivity.class);
-					cid2.putExtra("cid", 2);
-					startActivity(cid2);
-					break;
-
-				case 2:
 					Intent cid3 = new Intent(getApplicationContext(),
 							TopicActivity.class);
 					cid3.putExtra("cid", 3);
 					startActivity(cid3);
 					break;
 
-				case 3:
+				case 2:
 					Intent cid4 = new Intent(getApplicationContext(),
 							TopicActivity.class);
 					cid4.putExtra("cid", 4);
 					startActivity(cid4);
 					break;
 
-				case 4:
+				case 3:
 					startActivity(new Intent(getApplicationContext(),
 							AboutActivity.class));
 					break;
 
-				case 5:
+				case 4:
 					startActivity(new Intent(getApplicationContext(),
 							ContactActivity.class));
 					break;

@@ -47,7 +47,7 @@ public class MainListAdapter extends BaseAdapter {
 	public View getView(int position, View convertView, ViewGroup parent) {
 		View vi = convertView;
 		if (convertView == null)
-			vi = inflater.inflate(R.layout.activity_listitem, null);
+			vi = inflater.inflate(R.layout.activity_main_list, null);
 
 		TextView title = (TextView) vi.findViewById(R.id.title); // title
 		ImageView thumbnail = (ImageView) vi.findViewById(R.id.thumbnail); // title

@@ -25,21 +25,22 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.cafeastro.extra.ConnectionDetector;
+import com.google.analytics.tracking.android.EasyTracker;
 
 public class ContactActivity extends Activity {
-
 	/** Called when the activity is first created. */
 	@Override
-	public void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
+	public void onCreate(Bundle bundle) {
+		super.onCreate(bundle);
 		setContentView(R.layout.activity_contact);
 
 		// Check connection
 		ConnectionDetector cd = new ConnectionDetector(getApplicationContext());
-		Boolean isInternetPresent = cd.isConnectingToInternet(); // true or
-																	// false
+		Boolean isInternetPresent = cd.isConnectingToInternet();
+
 		if (!isInternetPresent) {
-			showAlertDialog(ContactActivity.this);
+			showAlertDialog(ContactActivity.this,
+					getResources().getString(R.string.d_internet_contact));
 		}
 
 		// Do after press send button
@@ -56,38 +57,6 @@ public class ContactActivity extends Activity {
 		});
 	}
 
-	/**
-	 * Function to display simple Alert Dialog
-	 * 
-	 * @param context
-	 **/
-	@SuppressWarnings("deprecation")
-	public void showAlertDialog(Context context) {
-		AlertDialog alertDialog = new AlertDialog.Builder(context).create();
-
-		// Setting Dialog Title
-		alertDialog.setTitle(getResources().getString(R.string.d_internet));
-
-		// Setting Dialog Message
-		alertDialog.setMessage(getResources().getString(
-				R.string.d_internet_contact));
-
-		// Setting alert dialog icon
-		alertDialog.setIcon(R.drawable.cancel);
-
-		// Setting OK Button
-		alertDialog.setButton("OK", new DialogInterface.OnClickListener() {
-			@Override
-			public void onClick(DialogInterface dialog, int which) {
-				startActivity(new Intent(getApplicationContext(),
-						MainActivity.class));
-			}
-		});
-
-		// Showing Alert Message
-		alertDialog.show();
-	}
-
 	public void sendAsPost() {
 		// Make and Run Thread for send form as post
 		new Thread(new Runnable() {
@@ -98,33 +67,37 @@ public class ContactActivity extends Activity {
 				EditText editTextEmail = (EditText) findViewById(R.id.editTextEmail);
 				String TextEmail = editTextEmail.getText().toString();
 				if (TextEmail.matches("")) {
-
+					// showAlertDialog(ContactActivity.this,
+					// getResources().getString(R.string.d_internet_contact));
 				}
 
 				// Get , Set , Check Name
 				EditText editTextName = (EditText) findViewById(R.id.editTextName);
 				String TextName = editTextName.getText().toString();
 				if (TextName.matches("")) {
-
+					// showAlertDialog(ContactActivity.this, getResources()
+					// .getString(R.string.d_content));
 				}
 
 				// Get , Set , Check Subject
 				EditText editTextSubject = (EditText) findViewById(R.id.editTextSubject);
 				String TextSubject = editTextSubject.getText().toString();
 				if (TextSubject.matches("")) {
-
+					// showAlertDialog(ContactActivity.this, getResources()
+					// .getString(R.string.d_content));
 				}
 
 				// Get , Set , Check Message
 				EditText editTextMessage = (EditText) findViewById(R.id.editTextMessage);
 				String TextMessage = editTextMessage.getText().toString();
 				if (TextMessage.matches("")) {
-
+					// showAlertDialog(ContactActivity.this, getResources()
+					// .getString(R.string.d_content));
 				}
 
 				// Send
 				HttpClient postClient = new DefaultHttpClient();
-				String postReq = "http://faragostaresh.com/modules/contact/ajax.php";
+				String postReq = "http://www.cafeastro.net/modules/contact/ajax.php";
 				HttpPost request = new HttpPost(postReq);
 				List<NameValuePair> postParams = new ArrayList<NameValuePair>();
 				postParams
@@ -153,5 +126,42 @@ public class ContactActivity extends Activity {
 				}
 			}
 		}).start();
+	}
+
+	@SuppressWarnings("deprecation")
+	public void showAlertDialog(Context context, String Message) {
+		AlertDialog alertDialog = new AlertDialog.Builder(context).create();
+		// Setting Dialog Title
+		alertDialog.setTitle(getResources().getString(R.string.d_error));
+		// Setting Dialog Message
+		alertDialog.setMessage(Message);
+		// Setting alert dialog icon
+		alertDialog.setIcon(R.drawable.cancel);
+		// Setting OK Button
+		alertDialog.setButton("OK", new DialogInterface.OnClickListener() {
+			@Override
+			public void onClick(DialogInterface dialog, int which) {
+				Intent intent = new Intent();
+				intent.setClass(ContactActivity.this, MainActivity.class);
+				ContactActivity.this.startActivity(intent);
+				ContactActivity.this.finish();
+			}
+		});
+		// Showing Alert Message
+		alertDialog.show();
+	}
+
+	@Override
+	public void onStart() {
+		super.onStart();
+		EasyTracker.getInstance().setContext(this);
+		EasyTracker.getInstance().activityStart(this);
+	}
+
+	@Override
+	public void onStop() {
+		super.onStop();
+		EasyTracker.getInstance().setContext(this);
+		EasyTracker.getInstance().activityStop(this);
 	}
 }

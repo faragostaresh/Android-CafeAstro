@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:background="@drawable/footer"
+    android:gravity="center|top"
+    android:orientation="vertical"
+    android:tileMode="repeat" >
+
+    <ir.adad.AdView
+        android:id="@+id/ad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="7dp"
+        token="41b9fe2263454532b75469ad0f25cff6"
+        android:gravity="center" />
+
+</LinearLayout>
